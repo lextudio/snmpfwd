@@ -16,16 +16,16 @@ from pysnmp.error import PySnmpError
 from pysnmp.entity import engine, config
 from pysnmp.entity.rfc3413 import config as lcd
 from pysnmp.entity.rfc3413 import cmdgen, ntforg, context
-from pysnmp.carrier.asynsock.dgram import udp
+from pysnmp.carrier.asyncio.dgram import udp
 try:
-    from pysnmp.carrier.asynsock.dgram import udp6
+    from pysnmp.carrier.asyncio.dgram import udp6
 except ImportError:
     udp6 = None
 try:
-    from pysnmp.carrier.asynsock.dgram import unix
+    from pysnmp.carrier.asyncio.dgram import unix
 except ImportError:
     unix = None
-from pysnmp.carrier.asynsock.dispatch import AsynsockDispatcher
+from pysnmp.carrier.asyncio.dispatch import AsynsockDispatcher
 from pysnmp.proto import rfc1157, rfc1902, rfc1905, rfc3411
 from pysnmp.proto.api import v2c
 from pyasn1 import debug as pyasn1_debug
